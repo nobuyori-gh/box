@@ -1,0 +1,10 @@
+<h1>投稿一覧</h1>
+   <% @lists.each do |list| %>
+   <!-- eachメソッド配列が持つ要素を順番に取得し処理する -->
+   <!-- @lists.eachはListレコードの数だけ繰り返し処理する -->
+   <!-- eachの箇所では<% %>に=つかないことに注意 -->
+     <p>タイトル</p>
+     <span>
+     <%=link_to list.title, todolist_path(list.id) %>
+     </span>
+<% end %>
