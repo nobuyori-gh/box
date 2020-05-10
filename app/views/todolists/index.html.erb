@@ -1,10 +1,24 @@
-<h1>投稿一覧</h1>
-   <% @lists.each do |list| %>
+<%@ lists.each do |list| %><%@lists .each do |list| %>
+<div class="list-box">
+  <%= attachment_image_tag list、:image, :fill, 200, 200, format: 'jpeg' %>
+  <div class="list-comment">
+    <span class="list-body"><%= list.body %></span>
+    <!-- <%= list.body %>はListモデルのbodyカラムのデータを呼び出す記述 -->
+    <span class="list-title"><%=link_to list.title, todolist_path(list.id) %></span>
+  </div>
+</div>
+<% end %>
+
+
+<!-- <h1>投稿一覧</h1>
+   <% @lists.each do |list| %> -->
    <!-- eachメソッド配列が持つ要素を順番に取得し処理する -->
    <!-- @lists.eachはListレコードの数だけ繰り返し処理する -->
    <!-- eachの箇所では<% %>に=つかないことに注意 -->
-     <p>タイトル</p>
+    <!--  <p>タイトル</p>
      <span>
      <%=link_to list.title, todolist_path(list.id) %>
      </span>
-<% end %>
+     <p>画像</p>
+     <%= attachment_image_tag list,:image,:fill,100,100,format:'jpeg' %>
+<% end %> -->
